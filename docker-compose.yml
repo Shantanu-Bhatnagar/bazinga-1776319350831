@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./main.py:/app/main.py # Mount for hot-reloading during development (optional)
+    environment:
+      PYTHONUNBUFFERED: 1 # Ensures Python output is sent immediately to the terminal
